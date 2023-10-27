@@ -1,0 +1,42 @@
+# Đề bài tại: https://tek4.vn/khoa-hoc/lap-trinh-python-can-ban/chuoi-trai-chuoi-phai-va-chuoi-doi-xung
+# Bài Tuyền làm
+string = input()
+s1 = string[::1]
+s2 = string[::-1]
+#print(s1)
+#print(s2)
+s3 = string[:int(len(string)/2):1]
+s4 = string[:int(len(string)/2)-1:-1]
+s5 = string[int(len(string)/2)]
+#print(s3)
+#print(s4)
+
+if len(string)%2 != 0:
+  print('The central point of the string is', s5 , '.')
+elif len(string)%2 == 0:
+  print('There is no central point.')
+if s3 == s4:
+  print('Symmertical String!')
+elif s3 > s4:
+  print('Left Bias!')
+else:
+  print('Right Bias!')
+
+#Bài hướng dẫn.
+string = input()
+
+left = len(string) // 2
+
+if len(string) % 2 == 1:
+  print("The central point of the string is " + string[left] + ".")
+  right = left + 1
+else:
+  print("There is no central point.")
+  right = left
+  
+if string[:left] == string[right:]:
+  print("Symmertical String!")
+elif string[:left] > string[right:]:
+  print("Left Bias!")
+else:
+  print("Right Bias!")
